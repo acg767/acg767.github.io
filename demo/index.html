@@ -1,0 +1,140 @@
+<!-- Copyright (C) Siemens AG 2018-2019 All Rights Reserved. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <base href="/">
+
+  <!-- Integration of component libraries -->
+  <script id="mdsp-webcomponents-loader" type="text/javascript"
+    src="https://static.eu1.mindsphere.io/webcomponents/v1/index.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="darkTheme.css">
+  <link rel="stylesheet" href="https://static.eu1.mindsphere.io/mdsp-css/v1.10.0/css/mdsp-css.min.css" />
+
+  <script type="text/javascript" src="https://static.eu1.mindsphere.io/osbar/v4/js/main.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+
+  <title>Simple Demo</title>
+
+</head>
+
+<body>
+  <div id="_mscontent" class="mdsp mdsp-defaults">
+    <div class="appWrapper">
+      <div
+        class="appWrapper__regions has-appHeader has-contextRegion has-leadingRegion contextRegion-is-expanded leadingRegion-is-expanded appWrapper__regions--pushLayout">
+
+        <section class="appHeader">
+          <div class="appHeader__breadcrumb" style="display: flex; padding-top: 10px;">
+            <div class="inputGroup" style="padding-left: 10px;">
+              <div class="switch switch--small">
+                <input class="switch__checkbox" type="checkbox" id="changeTemplateSwitch">
+                <label class="switch__handle" for="changeTemplateSwitch">
+                  <span class="switch__icon"></span>
+                </label>
+                <label class="switch__label" for="changeTemplateSwitch">Use custom template</label>
+              </div>
+            </div>
+            <div class="inputGroup" style="padding-left: 10px;">
+              <div class="switch switch--small">
+                <input class="switch__checkbox" type="checkbox" id="changeThemeSwitch">
+                <label class="switch__handle" for="changeThemeSwitch">
+                  <span class="switch__icon"></span>
+                </label>
+                <label class="switch__label" for="changeThemeSwitch">Toggle theme</label>
+              </div>
+            </div>
+          </div>
+          <div class="appHeader__content">
+            <div class="appHeader__viewToggler">
+              <mdsp-date-time-range-picker error-notification="true" class="float-right mx-2 my-7" right-aligned="false"
+                fixed-mode="true">
+              </mdsp-date-time-range-picker>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="leadingRegion">
+          <h1>Asset View Component</h1>
+          <mdsp-asset-view view-mode="List" style="display: block; height: calc(100% - 5.5em)" error-notification="true"
+            shared-assets="true" status-indicator="true" show-asset-image="true"> </mdsp-asset-view>
+        </section>
+
+        <section class="contextRegion">
+          <h1>Aspect Variable Selector</h1>
+          <mdsp-aspect-variable-selector style="display: block; height: 50%" error-notification="true"
+            category="Dynamic" data-types="INT,LONG,DOUBLE,BOOLEAN" view-mode="All" shared-assets="true">
+          </mdsp-aspect-variable-selector>
+          <h1>Map Component</h1>
+          <mdsp-map style="height: 300px; display: block" error-notification="true" zoom-level=15
+            status-indicator="true">
+          </mdsp-map>
+        </section>
+
+        <section class="mainRegion">
+
+          <div class="messageWrapper">
+            <div class="message is-info message--withIcon">
+              <h1 class="message__headline">Web Components Demo Application</h1>
+              <p>
+                This demo application demonstrates the MindSphere Web Components in one application. Find more
+                information at <a target="_blank"
+                  href="https://developer.mindsphere.io/resources/mindsphere-webcomponents/index.html">https://developer.mindsphere.io</a>
+              </p>
+            </div>
+          </div>
+
+          <h1>Time Series Chart</h1>
+          <mdsp-time-series-chart style="height: 460px; display: block" error-notification="true" shared-assets="true">
+          </mdsp-time-series-chart>
+
+          <h1>Event View Component</h1>
+          <mdsp-event-view style="height: 460px; display: block" error-notification="true" selectable="true"
+            filterable="true" pager-mode="Advanced" shared-assets="true" sort="severity,asc">
+          </mdsp-event-view>
+
+          <h1>File View Component</h1>
+          <mdsp-file-view style="height: 460px; display: block" error-notification="true" selectable="true"
+            filterable="true" pager-mode="Advanced"></mdsp-file-view>
+
+
+
+          <h1>Rule View Component</h1>
+          <mdsp-rule-view style="height: 460px; display: block" error-notification="true" pager-mode="Advanced">
+          </mdsp-rule-view>
+
+          <h1>Asset Map Component</h1>
+          <mdsp-asset-map style="height: 450px; display: block" error-notification="true" zoom-level=2 draggable=true
+            latitude="49" longitude="10" asset-click-handler="SelectionList" shared-assets="true"
+            status-indicator="true">
+          </mdsp-asset-map>
+
+          <h1>Custom Map Component</h1>
+          <mdsp-custom-map wheel-zoom="true" draggable="true" asset-click-handler="SelectionList" shared-assets="true"
+            style="height: 450px; display: block" error-notification="true" status-indicator="true">
+          </mdsp-custom-map>
+        </section>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <div id="customAssetViewTemplate" style="display: none;" class="mdsp mdsp-defaults">
+    <em class="iconMdsp asset black"></em>
+    <span class="h5">{{data.name}}</span>
+    <div>
+      <div class="badge badge--dark">Classification: {{data.twinType}}</div>
+      <div class="badge badge--light">TimeZone: {{data.timezone}}</div>
+      <div class="badge badge--dark">Country: {{data.location && data.location.country}}</div>
+    </div>
+  </div>
+</body>
+
+</html>

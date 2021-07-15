@@ -1,0 +1,65 @@
+/* Copyright (C) 2021, Siemens AG. All Rights Reserved. */
+
+/* use another element to scope your theme if you want to */
+body.dark {
+  color-scheme: dark;
+
+  /* Web Components Color Variables */
+  --color-list-detail-color-bg: 6, 6, 6;
+  --color-list-detail-color-bg: 50, 50, 50;
+  --color-list-color-bg: var(--color-base1000);
+  --color-search-match: 106, 100, 0;
+  --color-ol-blue: var(--color-primary-light);
+
+  --color-base000: 255, 255, 255;
+  --color-base200: 240, 240, 240;
+  --color-base450: 210, 210, 210;
+  --color-base600: 190, 190, 190;
+  --color-base750: 100, 100, 100;
+  --color-base800: 89, 89, 89;
+  --color-base900: 40, 40, 40;
+  --color-base1000: 0, 0, 0;
+
+  --color-font: var(--color-base200);
+  --color-font-secondary: var(--color-base600);
+  --color-font-disabled: var(--color-base600);
+
+  --color-shadow: var(--color-base1000);
+  --color-overlay: var(--color-base600);
+
+  --color-interface: var(--color-base900);
+  --color-interface-secondary: 55, 55, 55;
+  --color-interface-highlight: 28, 28, 28;
+  --color-interface-headerfooter: 28, 28, 28;
+
+  --color-border: 80, 80, 80;
+
+  --color-info-dark: 148, 190, 205;
+  --color-info-light: var(--color-info-dark);
+  --color-info-lighter: var(--color-base900);
+  --color-warning-dark: 106, 89, 49;
+  --color-warning-light: 226, 204, 138;
+  --color-warning-lighter: 253, 226, 122;
+  --color-error-dark: 130, 0, 1;
+  --color-error-light: 207, 139, 141;
+  --color-error-lighter: 246, 162, 162;
+  --color-success-dark: 104, 123, 0;
+  --color-success-light: 178, 195, 154;
+  --color-success-lighter: 207, 224, 170;
+
+  --color-appBar-bg: 42, 42, 42;
+  --color-appBar-bg2: var(--color-interface);
+  --color-appBar-color: var(--color-font);
+  --color-appBar-hover: var(--color-primary);
+  --color-appBar-border: 65, 65, 65;
+  --color-appBar--active-bg: var(--color-interface-highlight);
+  --color-appBar--active-color: var(--color-primary);
+  --color-appBar--active-indicator: var(--color-primary);
+  --color-appBar--badge: var(--color-base800);
+
+  background-color: rgb(var(--color-base900));
+}
+
+body.dark mdsp-time-series-chart {
+  background-color: rgba(var(--color-base800), 1);
+}
